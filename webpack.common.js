@@ -1,7 +1,10 @@
 let HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: {
+        main: "./src/index.js",
+        vendor: "./src/vendor.js"
+    },
     output: {
         assetModuleFilename: 'images/[name].[hash].[ext]' // Starting from Webpack 5
     },
