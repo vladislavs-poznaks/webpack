@@ -1,28 +1,13 @@
-let HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
     entry: {
         main: "./src/index.js",
         vendor: "./src/vendor.js"
     },
     output: {
-        assetModuleFilename: 'images/[name].[hash].[ext]' // Starting from Webpack 5
+        assetModuleFilename: 'images/[name].[contenthash].[ext]' // Starting from Webpack 5
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/template.html"
-        }),
-    ],
     module: {
         rules: [
-            {
-                test: /\.scss$/,
-                use: [
-                    "style-loader", // 3. Injects js with styles into DOM
-                    "css-loader", // 2. Turns css into js
-                    "sass-loader" // 1. Turns scss into css
-                ]
-            },
             {
                 test: /\.html$/,
                 use: [
